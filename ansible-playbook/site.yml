@@ -1,0 +1,9 @@
+---
+#This playbook deploys the mediawiki 
+- name: Media Wiki Database and WebServer
+  hosts: localhost
+  become: yes 
+
+  roles:
+   - { role: web, tags: [ 'install_web' ] }
+    

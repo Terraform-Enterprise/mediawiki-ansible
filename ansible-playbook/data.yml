@@ -1,0 +1,13 @@
+---
+#This playbook deploys the mediawiki 
+- name: Media Wiki Database and WebServer
+  hosts: localhost
+  become: yes 
+
+# Extra Vars passed from command line
+  vars_files: 
+    - vault.yml
+
+  roles:
+   - { role: mysqldb, tags: ['install_db'] }
+    
